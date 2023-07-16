@@ -1,0 +1,6 @@
+
+flask
+flasgger
+tiktoken
+gunicorn
+Flask-HTTPAuth

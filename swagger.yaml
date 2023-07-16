@@ -1,0 +1,45 @@
+
+securityDefinitions:
+  BasicAuth:
+    type: basic
+    description: HTTP Basic Authentication. Works over `HTTP` and `HTTPS`
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      properties:
+        text:
+          type: string
+          description: The text to be tokenized
+          required: true
+        encoding:
+          type: string
+          description: The encoding to be used for tokenization
+          required: true
+responses:
+  200:
+    description: Successful operation
+    schema:
+      type: object
+      properties:
+        total_tokens:
+          type: integer
+          description: The total number of tokens
+        tokens:
+          type: array
+          items:
+            type: object
+            properties:
+              token_string:
+                type: string
+                description: The string representation of the token
+              token_integer:
+                type: integer
+                description: The integer representation of the token
+  400:
+    description: Invalid request
+  500:
+    description: Internal server error
+security:
+  - BasicAuth: []
