@@ -8,6 +8,7 @@ import tiktoken
 app = Flask(__name__)
 swagger = Swagger(app)
 auth = HTTPBasicAuth()
+ENCODINGS = ["cl100k_base", "p50k_base", "r50k_base"]
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
