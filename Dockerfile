@@ -30,4 +30,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 80
 
 # Run app.py when the container launches
-CMD gunicorn --bind 0.0.0.0:$PORT --timeout 120 flask_app:app
+CMD gunicorn --bind 0.0.0.0:$PORT --timeout 2400 flask_app:app
